@@ -1,0 +1,223 @@
+html {
+    box-sizing: border-box;
+    line-height: 1;
+  }
+  
+ body {
+    margin: 0;
+    padding: 0;
+}
+
+  * {
+    &:before,
+    &:after {
+      box-sizing: inherit;
+    }
+  }
+  
+  a {
+    text-decoration: none;
+  }
+
+  li {
+      list-style: none;
+  }
+
+  ul,li {
+      margin: 0;
+      padding: 0;
+  }
+
+//   垂直居中
+  .vc {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+//   水平居中
+  .hc {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%)
+  }
+
+//   垂直水平一起居中
+  .box-cc {
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+  }
+
+  .pa {
+      position: absolute;
+  }
+
+  .pr {
+      position: relative;
+  }
+
+  .fl {
+      float: left;
+  }
+
+  .fr {
+      float: right;
+  }
+
+//   清除浮动
+  .clearfix {
+    &:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+  }
+
+  .mt10 {
+      margin-top: 10px;
+  }
+
+  .mt20 {
+      margin-top: 20px;
+  }
+
+  .mt30 {
+      margin-top: 30px;
+  }
+
+  .mt40 {
+      margin-top: 40px;
+  }
+
+  .mb10 {
+      margin-bottom: 10px;
+  }
+
+  .mb20 {
+      margin-bottom: 20px;
+  }
+
+  .mb30 {
+      margin-bottom: 30px;
+  }
+
+  .mb40 {
+      margin-bottom: 40px;
+  }
+
+  .ml10 {
+      margin-left: 10px;
+  }
+
+  .ml20 {
+      margin-left: 20px;
+  }
+
+  .ml30 {
+      margin-left: 30px;
+  }
+
+  .ml40 {
+      margin-left: 40px;
+  }
+
+  .mr10 {
+      margin-right: 10px;
+  }
+
+  .mr20 {
+      margin-right: 20px;
+  }
+
+  .mr30 {
+      margin-right: 30px;
+  }
+
+  .mr40 {
+      margin-right: 40px;
+  }
+
+  .vam {
+      vertical-align: middle;
+  }
+
+  .vat {
+      vertical-align: top;
+  }
+
+  .clearB {
+      clear: both;
+  }
+
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    white-space: -moz-pre-wrap;
+  }
+
+  .text-overflow{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    white-space: nowrap;
+    white-space: -moz-pre-wrap;
+  }
+
+  .pointer {
+      cursor: pointer;
+  }
+
+  .dib {
+      display: inline-block;
+  }
+
+  .db {
+      display: block;
+  }
+
+  .tc {
+      text-align: center;
+  }
+
+//   背景图片平铺不重复
+  @mixin bg-img($url,$repeat: no-repeat) {
+      background: url($url) $repeat center;
+      background-size: 100% 100%;
+      @content;
+  }
+
+  @mixin transition($second) {
+      transition: all $second+s;
+  }
+
+//   修改placeholder样式
+  @mixin placeholder {
+    ::-webkit-input-placeholder {@content};
+    :-moz-placeholder           {@content};
+    ::-moz-placeholder          {@content};
+    :-ms-input-placeholder      {@content};
+  }
+
+  @mixin wh($with, $height) {
+      width: $with;
+      height: $height;   
+  }
+
+  @mixin square($width) {
+      @include wh($width, $width);
+  }
+  @mixin border($var, $color) {
+      border: $var solid $color;
+  }
+
+  //   文字居中
+  @mixin lh($height) {
+    height: $height;
+    line-height: $height;
+}
